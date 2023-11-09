@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- Project identifier -->
+    <groupId>org.example</groupId>
+    <!-- Project name -->
+    <artifactId>TP_Sonarqube</artifactId>
+    <!-- Project version -->
+    <version>1.0-SNAPSHOT</version>
+    <!-- Maven compiler -->
+    <properties>
+        <!-- Maven compiler source-->
+        <maven.compiler.source>17</maven.compiler.source>
+        <!-- Maven compiler target-->
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+    <build>
+        <plugins>
+            <!-- Maven surefire plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+            <!-- Maven jacoco plugin -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <!-- jacoco version -->
+                <version>0.8.8</version>
+                <executions>
+                    <!-- Tests execution agent -->
+                    <execution>
+                        <id>default-prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <!-- Report params -->
+                    <execution>
+                        <id>default-report</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                    <!-- Tests check -->
+                    <execution>
+                        <id>default-check</id>
+                        <!-- Coverage check -->
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <!-- Report config -->
+                        <configuration>
+                            <rules>
+                                <!-- Coverage rule -->
+                                <rule>
+                                    <element>BUNDLE</element>
+                                    <limits>
+                                        <!-- Limit rule -->
+                                        <limit>
+                                            <counter>LINE</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>0.0</minimum>
+                                        </limit>
+                                    </limits>
+                                </rule>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <!-- JUnit Jupiter -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <!-- jupiter version -->
+            <version>5.9.1</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- JUnit Jupiter Engine -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <!-- jupiter version -->
+            <version>5.9.1</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- JUnit Jupiter Params -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <!-- jupiter version -->
+            <version>5.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

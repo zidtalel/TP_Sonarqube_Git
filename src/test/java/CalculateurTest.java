@@ -28,7 +28,7 @@ class CalculateurTest {
         b = -3;
         resultatAttendu = a * b;
         assertTrue(calc.multiply(a, b) == resultatAttendu,
-                "\nCas de test : PN \nVariable a : " + a +
+                "\nCas de test : PosN \nVariable a : " + a +
                         "\nVariable b : " + b + "\nRésultats attendus : "
                         + resultatAttendu + "\nRésultats obtenus : "
                         + calc.multiply(a, b));

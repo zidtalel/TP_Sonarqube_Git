@@ -1,10 +1,9 @@
 public class Calculateur {
 /**
 *
-* @param  url  an absolute URL giving the base location of the image
-* @param  name the location of the image, relative to the url argument
-* @return      the image at the specified URL
-* @see         Image
+* @param  a  le premier facteur de l'opération de multiplication
+* @param  b le deuxième facteur de l'opération de multiplication
+* @return      Retourne le produit des deux facteurs a et b
 */
     public int multiply(int a, int b) {
         int res = 0;

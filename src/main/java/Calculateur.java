@@ -4,6 +4,7 @@ public class Calculateur {
 * @param  a  le premier facteur de l'opération de multiplication
 * @param  b le deuxième facteur de l'opération de multiplication
 * @return      Retourne le produit des deux facteurs a et b
+ * @see
 */
     public int multiply(int a, int b) {
         int res = 0;
